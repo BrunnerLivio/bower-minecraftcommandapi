@@ -7,9 +7,10 @@
         "experimentalDecorators": true,
         "allowSyntheticDefaultImports": true,
         "sourceMap": true,
-        "noEmitHelpers": true,
         "strictNullChecks": false,
-        "baseUrl": "./"
+        "baseUrl": "./",
+        "outDir": "lib",
+        "declaration": true
     },
     "exclude": [
         "node_modules",

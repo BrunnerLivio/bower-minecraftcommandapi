@@ -7,7 +7,7 @@ import { Achievement } from './';
  * Adds a playername to a command.
  * Is used when calling 'Give' on IAchievementCommand
  */
-interface IAchievementCommandTo {
+export interface IAchievementCommandTo {
     /**
      * @name To
      * @description
@@ -18,14 +18,14 @@ interface IAchievementCommandTo {
     To(player: String): ICommand
 }
 /**
- * @name IAchievementCommandTo
+ * @name IAchievementCommandFrom
  * @description
  * Builder part of the AchievementCommand.
  * Adds a playername to a command.
  * Is used when calling 'Take' on IAchievementCommand
  * 
  */
-interface IAchievementCommandFrom {
+export interface IAchievementCommandFrom {
     /**
      * @name To
      * @description
@@ -41,7 +41,7 @@ interface IAchievementCommandFrom {
  * Builder part of the AchievementCommand.
  * Gives or takes the given achievement from the user
  */
-interface IAchievementCommand {
+export interface IAchievementCommand {
     /**
      * @name Give
      * @description
@@ -62,7 +62,7 @@ interface IAchievementCommand {
  * @description
  * Generates the final Achievment Command.
  */
-class AchievementCommandCommand implements ICommand {
+export class AchievementCommandCommand implements ICommand {
     private isGiven: Boolean;
     private playerName: String;
     private achievement: Achievement;
@@ -85,10 +85,8 @@ class AchievementCommandCommand implements ICommand {
      * @param {Achievement} achievement The achievement you want to have the name of.
      * @returns {String} The name of the achievement, of the given value
      */
-    private GetAchievementName(achievement: Achievement): string {
-        return Object.keys(Achievement)
-            .filter(a => Achievement[a] == achievement)
-            .map(a => a)[0];
+    private GetAchievementName(achievement: Achievement): String {
+        return Achievement[achievement];
     };
     /**
      * @name Command
@@ -120,7 +118,7 @@ class AchievementCommandCommand implements ICommand {
  * Adds a playername to a command.
  * Is used when calling 'Give' on IAchievementCommand
  */
-class AchievementCommandTo implements IAchievementCommandTo {
+export class AchievementCommandTo implements IAchievementCommandTo {
     private isGiven: Boolean;
     private achievement: Achievement;
     /**
@@ -150,7 +148,7 @@ class AchievementCommandTo implements IAchievementCommandTo {
  * Adds a playername to a command.
  * Is used when calling 'Take' on IAchievementCommand
  */
-class AchievementCommandFrom implements IAchievementCommandFrom {
+export class AchievementCommandFrom implements IAchievementCommandFrom {
     private achievement: Achievement;
     /**
      * @description
@@ -175,10 +173,11 @@ class AchievementCommandFrom implements IAchievementCommandFrom {
 
 /**
  * @name AchievementCommand
+ * @description
  * Builder part of the AchievementCommand.
  * Gives or takes the given achievement from the user
  */
-class AchievementCommand implements IAchievementCommand {
+export class AchievementCommand implements IAchievementCommand {
     constructor() { }
 
     /**
@@ -202,4 +201,3 @@ class AchievementCommand implements IAchievementCommand {
     }
 
 }
-export { AchievementCommand, IAchievementCommand };
