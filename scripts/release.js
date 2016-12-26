@@ -46,7 +46,7 @@ execSync('git push');
 execSync('git push origin ' + version);
 
 execSync('git checkout -b bower-' + version + '');
-execSync('git add --force release');
+execSync('git add --force lib');
 execSync('git commit -m "bower release ' + version + '"');
 execSync('git tag ' + version + '+bower');
 execSync('git remote add bower https://github.com/BrunnerLivio/bower-minecraftcommandapi.git');
