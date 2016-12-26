@@ -9,6 +9,7 @@ var path = require('path');
 var cd = require('cd');
 var exec = require('exec');
 var execSync = require('child_process').execSync;
+var bowerFile = 'bower.json';
 
 cd(path.join(__dirname, '..'));
 
@@ -26,6 +27,13 @@ if (!readlineSync.keyInYN('Did you push all changes back to origin?')) {
 
 execSync('npm run package');
 
+console.log('Updating version in bower.json to ' + version + '');
+
+var bowerJson = JSON.parse(fs.readFileSync(bowerFile, 'UTF-8'));
+bowerJson.version = version;
+fs.writeFileSync(bowerFile, bowerJson);
+
+
 execSync('git commit -m "Release ' + version + '"');
 
 
@@ -36,3 +44,12 @@ execSync('npm publish');
 execSync('git tag ' + version);
 execSync('git push');
 execSync('git push origin ' + version);
+
+execSync('git checkout -b bower-' + version + '');
+execSync('git add --force release');
+execSync('git commit -m "bower release ' + version + '"');
+execSync('git tag ' + version + '+bower');
+execSync('git remote add bower https://github.com/BrunnerLivio/bower-minecraftcommandapi.git');
+execSync('git push bower ' + version + '+bower:' + version);
+execSync('git remote rm bower');
+execSync('git checkout master');
