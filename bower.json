@@ -1,1 +1,25 @@
-{"name":"minecraftcommandapi","description":"An API, which provides functions to generate Minecraft Commands","main":"lib/mcapi.min.js","authors":["Livio Brunner <contact@brunnerliv.io>"],"license":"MIT","keywords":["minecraft","command","api","summon","give"],"homepage":"https://github.com/BrunnerLivio/MinecraftCommandAPI","ignore":["**/.*","node_modules","bower_components","test","tests"],"version":"0.0.532"}
+{
+    "name": "minecraftcommandapi",
+    "description": "An API, which provides functions to generate Minecraft Commands",
+    "main": "lib/mcapi.min.js",
+    "authors": [
+        "Livio Brunner <contact@brunnerliv.io>"
+    ],
+    "license": "MIT",
+    "keywords": [
+        "minecraft",
+        "command",
+        "api",
+        "summon",
+        "give"
+    ],
+    "homepage": "https://github.com/BrunnerLivio/MinecraftCommandAPI",
+    "ignore": [
+        "**/.*",
+        "node_modules",
+        "bower_components",
+        "test",
+        "tests"
+    ],
+    "version": "0.0.533"
+}

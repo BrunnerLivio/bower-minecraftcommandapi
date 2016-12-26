@@ -1,12 +1,12 @@
 {
   "name": "minecraftcommandapi",
-  "version": "0.0.533",
+  "version": "0.0.54",
   "description": "An API, which provides functions to generate Minecraft Commands",
-  "main": "lib/mcapi.min.js",
+  "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "scripts": {
     "clean": "shx rm -rf lib coverage *.log",
-    "build": "node_modules/.bin/webpack",
+    "build": "tsc && webpack && webpack --minimize",
     "test:dev": "node_modules/.bin/karma start --browsers Chrome",
     "test": "node_modules/.bin/karma start --browsers PhantomJS --single-run",
     "test:coverage": "npm run test && http-server coverage/ -p 2323",
