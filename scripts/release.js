@@ -33,7 +33,7 @@ var bowerJson = JSON.parse(fs.readFileSync(bowerFile, 'UTF-8'));
 bowerJson.version = version;
 fs.writeFileSync(bowerFile, JSON.stringify(bowerJson));
 
-
+execSync('git add bower.json');
 execSync('git commit -m "Release ' + version + '"');
 
 
