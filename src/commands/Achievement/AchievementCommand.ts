@@ -37,7 +37,7 @@ export class AchievementCommand implements IAchievementCommand {
      * Gives the player the given Achievement
      * @param {Achievement} name The achievement the player should get
      */
-    public Give(name: Achievement): IAchievementCommandTo {
+    public Give(name: Achievement): AchievementCommandTo {
         return new AchievementCommandTo(name);
     }
 
@@ -47,7 +47,7 @@ export class AchievementCommand implements IAchievementCommand {
      * Takes from the player the given Achievement
      * @param {Achievement} name The achievement the player should loose
      */
-    public Take(name: Achievement): IAchievementCommandFrom {
+    public Take(name: Achievement): AchievementCommandFrom {
         return new AchievementCommandFrom(name);
     }
 }

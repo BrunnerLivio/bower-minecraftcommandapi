@@ -1,11 +1,20 @@
 import { Achievement } from './';
 import { ICommand } from '../../core';
+
+/**
+ * @name IAchievementCommandCommand
+ * @description
+ * Generates the final Achievement Command.
+ */
+export interface IAchievementCommandCommand extends ICommand {
+
+}
 /**
  * @name AchievementCommandCommand
  * @description
- * Generates the final Achievment Command.
+ * Generates the final Achievement Command.
  */
-export class AchievementCommandCommand implements ICommand {
+export class AchievementCommandCommand implements IAchievementCommandCommand {
     private isGiven: Boolean;
     private playerName: String;
     private achievement: Achievement;

@@ -7,7 +7,9 @@ import {
     AchievementCommandFrom,
     AchievementCommandTo,
     IAchievementCommandFrom,
-    IAchievementCommandTo
+    IAchievementCommandTo,
+    IAchievementCommandCommand,
+    AchievementCommandCommand
 } from './commands';
 
 import {
@@ -32,10 +34,12 @@ export {
     IPosition,
     Version,
     Achievement,
-    IAchievementCommand,
     AchievementCommand,
+    IAchievementCommand,
     AchievementCommandFrom,
-    AchievementCommandTo,
     IAchievementCommandFrom,
+    AchievementCommandCommand,
+    IAchievementCommandCommand,
+    AchievementCommandTo,
     IAchievementCommandTo
 };
