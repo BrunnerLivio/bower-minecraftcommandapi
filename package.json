@@ -1,7 +1,7 @@
 {
   "name": "minecraftcommandapi",
-  "version": "0.0.49",
-  "description": "An API, which provides functions to generate Minecraft COmmands",
+  "version": "0.0.5",
+  "description": "An API, which provides functions to generate Minecraft Commands",
   "main": "lib/mcapi.min.js",
   "types": "lib/index.d.ts",
   "scripts": {
