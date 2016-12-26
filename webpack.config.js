@@ -2,8 +2,8 @@ var webpack = require('webpack');
 module.exports = {
     entry: './src/index.ts',
     output: {
-        libraryTarget: "var",
-        library: "mcapi",
+        // libraryTarget: "var",
+        // library: "mcapi",
         filename: 'lib/mcapi.min.js'
     },
     resolve: {
