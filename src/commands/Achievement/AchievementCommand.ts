@@ -50,5 +50,4 @@ export class AchievementCommand implements IAchievementCommand {
     public Take(name: Achievement): IAchievementCommandFrom {
         return new AchievementCommandFrom(name);
     }
-
 }
