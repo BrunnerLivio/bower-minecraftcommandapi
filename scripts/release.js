@@ -31,7 +31,7 @@ console.log('Updating version in bower.json to ' + version + '');
 
 var bowerJson = JSON.parse(fs.readFileSync(bowerFile, 'UTF-8'));
 bowerJson.version = version;
-fs.writeFileSync(bowerFile, bowerJson);
+fs.writeFileSync(bowerFile, JSON.stringify(bowerJson));
 
 
 execSync('git commit -m "Release ' + version + '"');
